@@ -1,0 +1,20 @@
+SAP version 18 has been used to create the models.
+
+For any Case (2,3,5 to 7), copy the all the files from the folder of that case to MATLAB searchable folder.
+
+Before opening the models in SAP  change the path in the scripts "openbuilding" "openbuildingparallel"
+"openmodel" "openmodelparallel" based on the location of SAP files on your pc
+
+Open the model in SAP via the script "openbuilding" for model 1 and "openmodel" for model 2 which will be present in the folder for that case.
+
+To run optimization for a particular case, run "GABuildingParams" available in folder for that case.
+
+
+For NOT running in parallel, comment out the following line in MATLAB script "GABuildingFunction":
+
+options = gaoptimset(options,'UseParallel', true);
+
+For optimization in parallel, specify the number of parallel pool workers based on the number of physical cores in your PC and also open additional number of SAP models using following script:
+"opensapmultiple"
+
+The file "varlist1.mat" contains excel imported data for section sizes and should be pasted into MATLAB searchable path.
